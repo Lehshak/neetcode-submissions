@@ -1,0 +1,25 @@
+class Solution:
+
+    def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
+        anagrams = dict()
+
+        for word in strs:
+            sorted_word = "".join(sorted(word))
+
+            if sorted_word in anagrams:
+                anagrams[sorted_word].append(word)
+            else:
+                anagrams[sorted_word] = [word]
+
+
+        groups = []
+        for sorted_word in anagrams:
+            groups.append(anagrams[sorted_word])
+
+        return groups
+            
+
+        
+            
+
+       
